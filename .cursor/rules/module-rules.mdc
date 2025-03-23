@@ -1,0 +1,48 @@
+---
+description: 
+globs: app/Modules/**/*.php
+alwaysApply: false
+---
+# SiteMate Module Development Rules
+
+## Module Structure
+Each module should follow a consistent structure:
+- Main module class implementing AbstractModule
+- Individual check classes
+- Module-specific services (if needed)
+
+## Module Implementation
+- Implement the `getName()` method to return the module name
+- Implement the `getChecks()` method to return available checks
+- Use the `analyze()` method to run checks on a page
+
+## Check Implementation
+- Each check should have a single responsibility
+- Include proper severity classification
+- Store detailed information for reporting
+- Implement clear error messages
+
+## Performance Considerations
+- Consider rate limiting for external requests
+- Implement proper timeouts
+- Use caching when appropriate
+- Consider batching operations when possible
+
+## Example Structure
+```php
+class LinkModule extends AbstractModule
+{
+    public function getName(): string
+    {
+        return 'links';
+    }
+    
+    public function getChecks(): array
+    {
+        return [
+            BrokenLinkCheck::class,
+            RedirectCheck::class,
+            // More checks...
+        ];
+    }
+}

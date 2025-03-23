@@ -1,0 +1,60 @@
+---
+description: 
+globs: **/*.php
+alwaysApply: false
+---
+# Laravel Development Rules
+
+## Laravel Patterns and Best Practices
+
+### Models
+- Use Eloquent relationships appropriately
+- Implement accessors and mutators when needed
+- Keep business logic in models minimal
+- Use casts for JSON columns and dates
+
+### Controllers
+- Keep controllers thin, move business logic to services
+- Use form requests for validation
+- Return appropriate responses with correct status codes
+- Follow RESTful conventions
+
+### Services
+- Create service classes for business logic
+- Make services focused on a specific domain
+- Use dependency injection
+
+### Database
+- Use migrations for schema changes
+- Define foreign keys and indexes
+- Use factories and seeders for testing
+- Consider using database transactions for related operations
+
+### Queues and Jobs
+- Use queues for long-running tasks
+- Make jobs self-contained
+- Handle failures gracefully
+- Consider using batching for related jobs
+
+### Modules
+- Each module should be self-contained
+- Use interfaces for module contracts
+- Make modules registerable and configurable
+- Consider feature flags for premium features
+
+## SiteMate-Specific Patterns
+
+### Scanning Process
+- Reports should create and manage PageScans
+- Use queues for all scanning operations
+- Implement proper error handling and reporting
+
+### Issue Creation
+- Issues should include severity, type, and module
+- Store detailed information in the data JSON column. The content in this array might depend, based on the type of Issue.
+
+### Report Generation
+- Generate summary statistics for site-level reports
+- Implement proper grouping and filtering
+
+Follow these patterns when creating or modifying Laravel code.

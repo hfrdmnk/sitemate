@@ -1,0 +1,48 @@
+---
+description: 
+globs: resources/js/**/*.tsx
+alwaysApply: false
+---
+# Inertia.js with React/TypeScript Rules
+
+## Inertia.js v2 Conventions
+- Use the `@inertiajs/react` package
+- Follow the Inertia page structure pattern
+- Use Inertia's form handling utilities
+- Prefer server-side validation and reporting
+- Prefer to use Inertia router instead of packages like Axios
+- For polling, use usePoll instead of a custom solution
+
+## React Best Practices
+- Use functional components with hooks
+- Implement proper prop types with TypeScript interfaces
+- Break down complex components into smaller ones
+- Use React.memo for performance optimization when appropriate
+- Use Context API for shared state between related components
+
+## TypeScript Usage
+- Create proper interfaces for all props
+- Define types for API responses
+- Use type guards when necessary
+- Avoid `any` type when possible
+- Use generics for reusable components
+
+## State Management
+- Use React's useState for component state
+- Consider useReducer for complex state
+- Avoid prop drilling by using Context API
+- Keep form state close to form components
+
+## Component Structure
+- Follow a consistent component structure:
+  - Imports
+  - Interface/Types
+  - Component
+  - Exports
+- Extract reusable hooks to separate files
+
+## Performance
+- Implement proper memoization
+- Avoid unnecessary re-renders
+
+When working on frontend code, maintain this consistent approach.
