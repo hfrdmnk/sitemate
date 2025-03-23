@@ -21,6 +21,11 @@ class Report extends Model
         'completed_at' => 'datetime',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function pageScans()
     {
         return $this->hasMany(PageScan::class);

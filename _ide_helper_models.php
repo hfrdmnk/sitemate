@@ -74,6 +74,7 @@ namespace App\Models{
  * 
  *
  * @property string $id
+ * @property int $user_id
  * @property string $start_url
  * @property string $status
  * @property \Illuminate\Support\Carbon $started_at
@@ -82,6 +83,7 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\PageScan> $pageScans
  * @property-read int|null $page_scans_count
+ * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Report newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Report newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Report query()
@@ -92,6 +94,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereStartedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereUserId($value)
  */
 	class Report extends \Eloquent {}
 }
@@ -110,6 +113,8 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Report> $reports
+ * @property-read int|null $reports_count
  * @method static \Database\Factories\UserFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User newQuery()

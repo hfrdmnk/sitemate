@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class ReportController extends Controller
 {
@@ -12,7 +14,11 @@ class ReportController extends Controller
      */
     public function index()
     {
-        //
+        $reports = Auth::user()->reports()->get();
+
+        return Inertia::render('reports/index', [
+            'reports' => $reports,
+        ]);
     }
 
     /**
