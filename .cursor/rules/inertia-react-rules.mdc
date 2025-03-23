@@ -1,6 +1,6 @@
 ---
 description: 
-globs: resources/js/**/*.tsx
+globs: **/*.tsx
 alwaysApply: false
 ---
 # Inertia.js with React/TypeScript Rules
