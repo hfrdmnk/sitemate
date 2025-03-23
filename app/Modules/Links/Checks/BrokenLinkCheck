@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Modules\Links\Checks;
+
+use App\Models\PageScan;
+
+class BrokenLinkCheck
+{
+    public function run(PageScan $pageScan): array
+    {
+        $issues = [];
+
+        // Do the checks
+
+        return $issues;
+    }
+}
