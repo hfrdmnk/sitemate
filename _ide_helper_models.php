@@ -15,10 +15,26 @@ namespace App\Models{
 /**
  * 
  *
- * @property-read \App\Models\PageScan|null $pageScan
+ * @property int $id
+ * @property int $page_scan_id
+ * @property string $module
+ * @property string $type
+ * @property string $severity
+ * @property array<array-key, mixed> $data
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\PageScan $pageScan
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue whereData($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue whereModule($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue wherePageScanId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue whereSeverity($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Issue whereUpdatedAt($value)
  */
 	class Issue extends \Eloquent {}
 }
@@ -27,12 +43,28 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $report_id
+ * @property string $url
+ * @property string $status
+ * @property \Illuminate\Support\Carbon $started_at
+ * @property \Illuminate\Support\Carbon|null $completed_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Issue> $issues
  * @property-read int|null $issues_count
- * @property-read \App\Models\Report|null $report
+ * @property-read \App\Models\Report $report
  * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan whereCompletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan whereReportId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan whereStartedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PageScan whereUrl($value)
  */
 	class PageScan extends \Eloquent {}
 }
@@ -41,11 +73,25 @@ namespace App\Models{
 /**
  * 
  *
+ * @property string $id
+ * @property string $start_url
+ * @property string $status
+ * @property \Illuminate\Support\Carbon $started_at
+ * @property \Illuminate\Support\Carbon|null $completed_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\PageScan> $pageScans
  * @property-read int|null $page_scans_count
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Report newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Report newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Report query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereCompletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereStartUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereStartedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Report whereUpdatedAt($value)
  */
 	class Report extends \Eloquent {}
 }
