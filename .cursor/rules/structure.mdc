@@ -1,0 +1,250 @@
+# Project Structure
+
+```
+.
+├── .cursor
+│   └── rules
+│       ├── agent.mdc
+│       ├── general-project-info.mdc
+│       ├── inertia-react-rules.mdc
+│       ├── laravel-rules.mdc
+│       ├── module-rules.mdc
+│       └── structure.mdc
+├── .editorconfig
+├── .env.example
+├── .gitattributes
+├── .github
+│   └── workflows
+│       ├── lint.yml
+│       └── tests.yml
+├── .gitignore
+├── .prettierignore
+├── .prettierrc
+├── .scripts
+│   └── update_structure.sh
+├── _ide_helper.php
+├── _ide_helper_models.php
+├── app
+│   ├── Http
+│   │   ├── Controllers
+│   │   │   ├── AuditController.php
+│   │   │   ├── Auth
+│   │   │   │   ├── AuthenticatedSessionController.php
+│   │   │   │   ├── ConfirmablePasswordController.php
+│   │   │   │   ├── EmailVerificationNotificationController.php
+│   │   │   │   ├── EmailVerificationPromptController.php
+│   │   │   │   ├── NewPasswordController.php
+│   │   │   │   ├── PasswordResetLinkController.php
+│   │   │   │   ├── RegisteredUserController.php
+│   │   │   │   └── VerifyEmailController.php
+│   │   │   ├── Controller.php
+│   │   │   └── Settings
+│   │   │       ├── PasswordController.php
+│   │   │       └── ProfileController.php
+│   │   ├── Middleware
+│   │   │   ├── HandleAppearance.php
+│   │   │   └── HandleInertiaRequests.php
+│   │   └── Requests
+│   │       ├── Auth
+│   │       │   └── LoginRequest.php
+│   │       └── Settings
+│   │           └── ProfileUpdateRequest.php
+│   ├── Models
+│   │   ├── Audit.php
+│   │   ├── Issue.php
+│   │   ├── Page.php
+│   │   └── User.php
+│   ├── Modules
+│   │   ├── AbstractModule.php
+│   │   ├── Links
+│   │   │   ├── Checks
+│   │   │   │   └── BrokenLinkCheck.php
+│   │   │   └── LinkModule.php
+│   │   └── ModuleManager.php
+│   └── Providers
+│       └── AppServiceProvider.php
+├── artisan
+├── bootstrap
+│   ├── app.php
+│   ├── cache
+│   │   └── .gitignore
+│   └── providers.php
+├── components.json
+├── composer.json
+├── composer.lock
+├── config
+│   ├── app.php
+│   ├── auth.php
+│   ├── cache.php
+│   ├── database.php
+│   ├── filesystems.php
+│   ├── inertia.php
+│   ├── logging.php
+│   ├── mail.php
+│   ├── queue.php
+│   ├── services.php
+│   ├── session.php
+│   └── solo.php
+├── database
+│   ├── .gitignore
+│   ├── factories
+│   │   └── UserFactory.php
+│   ├── migrations
+│   │   ├── 0001_01_01_000000_create_users_table.php
+│   │   ├── 0001_01_01_000001_create_cache_table.php
+│   │   ├── 0001_01_01_000002_create_jobs_table.php
+│   │   ├── 2025_03_23_184236_create_audits_table.php
+│   │   ├── 2025_03_23_184631_create_pages_table.php
+│   │   └── 2025_03_23_184650_create_issues_table.php
+│   └── seeders
+│       └── DatabaseSeeder.php
+├── eslint.config.js
+├── package-lock.json
+├── package.json
+├── phpunit.xml
+├── public
+│   ├── .htaccess
+│   ├── favicon.ico
+│   ├── index.php
+│   ├── logo.svg
+│   └── robots.txt
+├── resources
+│   ├── css
+│   │   └── app.css
+│   ├── js
+│   │   ├── app.tsx
+│   │   ├── components
+│   │   │   ├── app-content.tsx
+│   │   │   ├── app-header.tsx
+│   │   │   ├── app-logo-icon.tsx
+│   │   │   ├── app-logo.tsx
+│   │   │   ├── app-shell.tsx
+│   │   │   ├── app-sidebar-header.tsx
+│   │   │   ├── app-sidebar.tsx
+│   │   │   ├── appearance-dropdown.tsx
+│   │   │   ├── appearance-tabs.tsx
+│   │   │   ├── breadcrumbs.tsx
+│   │   │   ├── delete-user.tsx
+│   │   │   ├── heading-small.tsx
+│   │   │   ├── heading.tsx
+│   │   │   ├── icon.tsx
+│   │   │   ├── input-error.tsx
+│   │   │   ├── nav-footer.tsx
+│   │   │   ├── nav-main.tsx
+│   │   │   ├── nav-user.tsx
+│   │   │   ├── text-link.tsx
+│   │   │   ├── ui
+│   │   │   │   ├── alert.tsx
+│   │   │   │   ├── avatar.tsx
+│   │   │   │   ├── badge.tsx
+│   │   │   │   ├── breadcrumb.tsx
+│   │   │   │   ├── button.tsx
+│   │   │   │   ├── card.tsx
+│   │   │   │   ├── checkbox.tsx
+│   │   │   │   ├── collapsible.tsx
+│   │   │   │   ├── dialog.tsx
+│   │   │   │   ├── dropdown-menu.tsx
+│   │   │   │   ├── icon.tsx
+│   │   │   │   ├── input.tsx
+│   │   │   │   ├── label.tsx
+│   │   │   │   ├── navigation-menu.tsx
+│   │   │   │   ├── placeholder-pattern.tsx
+│   │   │   │   ├── select.tsx
+│   │   │   │   ├── separator.tsx
+│   │   │   │   ├── sheet.tsx
+│   │   │   │   ├── sidebar.tsx
+│   │   │   │   ├── skeleton.tsx
+│   │   │   │   ├── toggle-group.tsx
+│   │   │   │   ├── toggle.tsx
+│   │   │   │   └── tooltip.tsx
+│   │   │   ├── user-info.tsx
+│   │   │   └── user-menu-content.tsx
+│   │   ├── hooks
+│   │   │   ├── use-appearance.tsx
+│   │   │   ├── use-initials.tsx
+│   │   │   ├── use-mobile-navigation.ts
+│   │   │   └── use-mobile.tsx
+│   │   ├── layouts
+│   │   │   ├── app
+│   │   │   │   ├── app-header-layout.tsx
+│   │   │   │   └── app-sidebar-layout.tsx
+│   │   │   ├── app-layout.tsx
+│   │   │   ├── auth
+│   │   │   │   ├── auth-card-layout.tsx
+│   │   │   │   ├── auth-simple-layout.tsx
+│   │   │   │   └── auth-split-layout.tsx
+│   │   │   ├── auth-layout.tsx
+│   │   │   └── settings
+│   │   │       └── layout.tsx
+│   │   ├── lib
+│   │   │   └── utils.ts
+│   │   ├── pages
+│   │   │   ├── audits
+│   │   │   │   └── index.tsx
+│   │   │   ├── auth
+│   │   │   │   ├── confirm-password.tsx
+│   │   │   │   ├── forgot-password.tsx
+│   │   │   │   ├── login.tsx
+│   │   │   │   ├── register.tsx
+│   │   │   │   ├── reset-password.tsx
+│   │   │   │   └── verify-email.tsx
+│   │   │   ├── settings
+│   │   │   │   ├── appearance.tsx
+│   │   │   │   ├── password.tsx
+│   │   │   │   └── profile.tsx
+│   │   │   └── welcome.tsx
+│   │   ├── ssr.tsx
+│   │   └── types
+│   │       ├── global.d.ts
+│   │       ├── index.d.ts
+│   │       └── vite-env.d.ts
+│   └── views
+│       └── app.blade.php
+├── routes
+│   ├── auth.php
+│   ├── console.php
+│   ├── settings.php
+│   └── web.php
+├── storage
+│   ├── app
+│   │   ├── .gitignore
+│   │   ├── private
+│   │   │   └── .gitignore
+│   │   └── public
+│   │       └── .gitignore
+│   ├── framework
+│   │   ├── .gitignore
+│   │   ├── cache
+│   │   │   ├── .gitignore
+│   │   │   └── data
+│   │   │       └── .gitignore
+│   │   ├── sessions
+│   │   │   └── .gitignore
+│   │   ├── testing
+│   │   │   └── .gitignore
+│   │   └── views
+│   │       └── .gitignore
+│   └── logs
+│       └── .gitignore
+├── tests
+│   ├── Feature
+│   │   ├── Auth
+│   │   │   ├── AuthenticationTest.php
+│   │   │   ├── EmailVerificationTest.php
+│   │   │   ├── PasswordConfirmationTest.php
+│   │   │   ├── PasswordResetTest.php
+│   │   │   └── RegistrationTest.php
+│   │   ├── DashboardTest.php
+│   │   ├── ExampleTest.php
+│   │   └── Settings
+│   │       ├── PasswordUpdateTest.php
+│   │       └── ProfileUpdateTest.php
+│   ├── Pest.php
+│   ├── TestCase.php
+│   └── Unit
+│       └── ExampleTest.php
+├── tsconfig.json
+└── vite.config.ts
+
+62 directories, 182 files
+```
