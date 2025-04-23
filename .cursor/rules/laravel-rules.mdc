@@ -45,7 +45,7 @@ alwaysApply: false
 ## SiteMate-Specific Patterns
 
 ### Scanning Process
-- Reports should create and manage PageScans
+- Audits should create and manage Pages
 - Use queues for all scanning operations
 - Implement proper error handling and reporting
 
@@ -53,8 +53,8 @@ alwaysApply: false
 - Issues should include severity, type, and module
 - Store detailed information in the data JSON column. The content in this array might depend, based on the type of Issue.
 
-### Report Generation
-- Generate summary statistics for site-level reports
+### Audit Generation
+- Generate summary statistics for site-level audits
 - Implement proper grouping and filtering
 
 Follow these patterns when creating or modifying Laravel code.

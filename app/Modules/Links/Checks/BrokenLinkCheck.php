@@ -2,11 +2,11 @@
 
 namespace App\Modules\Links\Checks;
 
-use App\Models\PageScan;
+use App\Models\Page;
 
 class BrokenLinkCheck
 {
-    public function run(PageScan $pageScan): array
+    public function run(Page $page): array
     {
         $issues = [];
 

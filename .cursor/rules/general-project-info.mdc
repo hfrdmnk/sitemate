@@ -15,8 +15,8 @@ SiteMate is a website quality assurance tool for web agencies and developers. It
 - Database & Queue: Just use the facades, Laravel provides
 
 ## Key Concepts
-- **Reports**: Main entity that represents a website quality assurance report
-- **PageScans**: Individual pages, that were scanned for the site/report they belong to
+- **Audit**: Main entity that represents a website quality assurance report
+- **Page**: Individual pages, that were scanned for the site/report they belong to
 - **Issues**: Problems found during scanning, categorized by modules
 
 ## Architecture
@@ -27,9 +27,9 @@ SiteMate uses a modular approach with specialized modules for different check ty
 - Performance Module
 
 ## Models Relationship
-- A Report has multiple PageScans
-- A PageScan belongs exactly to one Report but can have many Issues
-- Each Issue belongs to exactly one PageScan
+- An Audit has multiple Pages
+- A Page belongs to at least one Audit (but can belong to more, if the site hasn't changed between Audits)
+- Each Issue belongs to exactly one Page
 
 ## Main Features
 - Website crawling and analysis

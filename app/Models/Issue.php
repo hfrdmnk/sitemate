@@ -17,8 +17,8 @@ class Issue extends Model
         'data' => 'array',
     ];
 
-    public function pageScan()
+    public function page()
     {
-        return $this->belongsTo(PageScan::class);
+        return $this->belongsTo(Page::class);
     }
 }

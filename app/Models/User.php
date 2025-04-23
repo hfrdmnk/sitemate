@@ -46,8 +46,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function reports()
+    public function audits()
     {
-        return $this->hasMany(Report::class);
+        return $this->hasMany(Audit::class);
     }
 }

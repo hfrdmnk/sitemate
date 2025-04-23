@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Report;
+use App\Models\Audit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
-class ReportController extends Controller
+class AuditController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $reports = Auth::user()->reports()->get();
+        $audits = Auth::user()->audits()->get();
 
-        return Inertia::render('reports/index', [
-            'reports' => $reports,
+        return Inertia::render('audits/index', [
+            'audits' => $audits,
         ]);
     }
 
@@ -40,7 +40,7 @@ class ReportController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Report $report)
+    public function show(Audit $audit)
     {
         //
     }
@@ -48,7 +48,7 @@ class ReportController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Report $report)
+    public function edit(Audit $audit)
     {
         //
     }
@@ -56,7 +56,7 @@ class ReportController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Report $report)
+    public function update(Request $request, Audit $audit)
     {
         //
     }
@@ -64,7 +64,7 @@ class ReportController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Report $report)
+    public function destroy(Audit $audit)
     {
         //
     }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
-class Report extends Model
+class Audit extends Model
 {
     use HasUuids;
 
@@ -26,8 +26,8 @@ class Report extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function pageScans()
+    public function pages()
     {
-        return $this->hasMany(PageScan::class);
+        return $this->hasMany(Page::class);
     }
 }

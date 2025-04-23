@@ -2,7 +2,7 @@
 
 namespace App\Modules;
 
-use App\Models\PageScan;
+use App\Models\Page;
 
 abstract class AbstractModule
 {
@@ -10,13 +10,13 @@ abstract class AbstractModule
 
     abstract public function getChecks(): array;
 
-    public function analyze(PageScan $pageScan): array
+    public function analyze(Page $page): array
     {
         $issues = [];
 
         foreach ($this->getChecks() as $checkClass) {
             $check = new $checkClass();
-            $checkIssues = $check->run($pageScan);
+            $checkIssues = $check->run($page);
             foreach ($checkIssues as $issue) {
                 $issues[] = array_merge($issue, [
                     'module' => $this->getName(),

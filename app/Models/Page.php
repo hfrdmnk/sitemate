@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PageScan extends Model
+class Page extends Model
 {
     protected $fillable = [
         'url',
@@ -18,9 +18,9 @@ class PageScan extends Model
         'completed_at' => 'datetime',
     ];
 
-    public function report()
+    public function audit()
     {
-        return $this->belongsTo(Report::class);
+        return $this->belongsTo(Audit::class);
     }
 
     public function issues()
